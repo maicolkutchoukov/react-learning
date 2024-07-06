@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 // Gli Hooks devono essere usasti con use davanti
 // componenti devono avere la prima lettere Maiuscola
 // Gli Hook devono essere invocati all'interno del corpo/funzione del componente
 // Gli Hook non possono essere utilizzati in maniera condizionale
 
 const UsoBase = () => {
-  //   const value = useState()[0];
-  //   const handler = useState()[1];
-  //   console.log(value, handler);
-
+  const [titolo, setTitolo] = useState("Hello World!!");
+  const cambiaTitolo = () => {
+    if (titolo === "Hello World!!") {
+        setTitolo("Ciao Mondo!!");
+    } else {
+        setTitolo("Hello World!!");
+    }
+};
   return (
     <>
-      <h2> Basi useState</h2>
+        <h2>{titolo}</h2>
+        <button onClick={cambiaTitolo} className="btn btn-info my-3">Cambia Titolo</button>
     </>
   );
 };
