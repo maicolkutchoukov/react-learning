@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { dati } from '../../data'
+import { dati } from '../../../data'
 
 const Progetto1 = () => {
     console.log(dati);
@@ -16,12 +16,13 @@ const Progetto1 = () => {
         setPeople(dati)
     }
   return (
-    <>
+    <section className='d-flex text-center my-3 m-auto d-flex flex-column align-items-center w-75 justify-content-center'>
+        <h1>Prossimi Incontri</h1>
         {
             people.map(person => {
                 const {id, nome, stato, img} = person;
                 return (
-                    <div key = {id} className='item m-0 w-75 bg-dark text-white text-start'>
+                    <div key = {id} className='item m-0 w-75 bg-dark text-white text-start mb-1'>
                         <div className='img-container'>
                             <img src={img} alt="immagine" className='rounded-circle'/>
                         </div>
@@ -40,7 +41,7 @@ const Progetto1 = () => {
             <button className='btn btn-info border-dark' onClick={reloadPeople}>Reload</button>
             <button className='btn delete-button border-dark' onClick={removeAll}>Delete All</button>
         </div>
-    </>
+    </section>
   )
 }
 
